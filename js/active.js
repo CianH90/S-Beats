@@ -1,3 +1,4 @@
+
 (function ($) {
     'use strict';
 
@@ -10,16 +11,8 @@
         });
     });
 
-    // :: 2.0 Nav Active Code
-    if ($.fn.classyNav) {
-        $('#oneMusicNav').classyNav();
-    }
-
-    // :: 3.0 Sliders Active Code
-    if ($.fn.owlCarousel) {
+    browserWindow.on('load', function () {
         var welcomeSlide = $('.hero-slides');
-        var testimonials = $('.testimonials-slide');
-        var albumSlides = $('.albums-slideshow');
 
         welcomeSlide.owlCarousel({
             items: 1,
@@ -49,6 +42,20 @@
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
         });
+    });
+
+    // :: 2.0 Nav Active Code
+    if ($.fn.classyNav) {
+        $('#oneMusicNav').classyNav();
+    }
+
+    // :: 3.0 Sliders Active Code
+    if ($.fn.owlCarousel) {
+        
+        var testimonials = $('.testimonials-slide');
+        var albumSlides = $('.albums-slideshow');
+
+
 
         $("[data-delay]").each(function () {
             var anim_del = $(this).data('delay');
